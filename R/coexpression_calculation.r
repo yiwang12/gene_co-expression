@@ -1,6 +1,6 @@
 #### calculate co-expression in UMI and bulk data separately
 
-#### filt high expression genes
+#### filter high expression genes
 load("/users/ywang/12_11/out/merged_list_UMI_bulk_10X2_GD660_GeneQuantRPKM.RData") ## load merged bulk and UMI data : merged_list_UMI_bulk
 #> dim(merged_list_UMI_bulk)
 #[1] 8781 7150
@@ -14,7 +14,7 @@ bulk_count = merged_list_UMI_bulk[, (col_numbers_UMI+1+5):col_numbers_total]
 save(bulk_count,file="/users/ywang/12_11/out/bulk_count.RData")
 save(UMI_count,file="/users/ywang/12_11/out/UMI_count.RData")
 
-## normalization of UMI data bu cpm
+## normalization of UMI data by cpm
 #lib.size_all=colSums(UMI_count)
 #UMI_count_norm = (UMI_count+1)*1000000/(lib.size_all+1)
 #save(UMI_count_norm,file="/users/ywang/12_11/out/UMI_count_norm.RData")
